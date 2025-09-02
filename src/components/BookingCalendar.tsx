@@ -88,7 +88,7 @@ const BookingCalendar = () => {
   };
 
   // Disable past dates
-  const tileDisabled = ({ date, view }: { date: Date; view: 'month' | 'year' | 'decade' }) => {
+  const tileDisabled = ({ date, view }: { date: Date; view: string }) => {
     // Disable dates in the past
     if (view === 'month') {
       return isBefore(date, startOfDay(new Date())) && !isToday(date);
@@ -202,14 +202,14 @@ const BookingCalendar = () => {
             minDate={new Date()}
             maxDate={addDays(new Date(), 30)} // Allow booking up to 30 days in advance
             view={activeView}
-            onViewChange={({ view }: { view: 'month' | 'year' | 'decade' }) => setActiveView(view)}
-            navigationLabel={null} // Disable default navigation label
-            formatShortWeekday={(_locale: string, date: Date) => format(date, 'EEE')}
-            formatMonthYear={(_locale: string, date: Date) => format(date, 'MMMM yyyy')}
-            next2Label={null} // Disable double next button
-            prev2Label={null} // Disable double prev button
-            nextLabel={null}
-            prevLabel={null}
+            onViewChange={({ view }: { view: string }) => setActiveView(view as 'month' | 'year' | 'decade')}
+            navigationLabel={undefined} // Disable default navigation label
+            formatShortWeekday={(_locale: string | undefined, date: Date) => format(date, 'EEE')}
+            formatMonthYear={(_locale: string | undefined, date: Date) => format(date, 'MMMM yyyy')}
+            next2Label={undefined} // Disable double next button
+            prev2Label={undefined} // Disable double prev button
+            nextLabel={undefined}
+            prevLabel={undefined}
           />
         </div>
         

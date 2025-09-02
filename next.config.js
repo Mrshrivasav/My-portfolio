@@ -37,8 +37,6 @@ const nextConfig = {
 		];
 	},
 	experimental: {
-		optimizeFonts: true,
-		modern: true,
 		scrollRestoration: true,
 	},
 };
