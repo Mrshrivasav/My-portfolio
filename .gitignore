@@ -4,8 +4,7 @@ node_modules/
 out/
 dist/
 
-# Cloned repository
-My-portfolio/
+# Keep all portfolio files
 
 # Logs
 npm-debug.log*
