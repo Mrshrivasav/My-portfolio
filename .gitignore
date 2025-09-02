@@ -4,6 +4,9 @@ node_modules/
 out/
 dist/
 
+# Cloned repository
+My-portfolio/
+
 # Logs
 npm-debug.log*
 yarn-debug.log*
