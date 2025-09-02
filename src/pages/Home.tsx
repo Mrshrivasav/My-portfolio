@@ -77,7 +77,7 @@ const Home = () => {
 				>
 					<div className="flex justify-center space-x-3 sm:space-x-4">
 						<a
-							href="/files/cv_pdf/Niladri_Chatterjee(CV).pdf"
+							href="/files/cv_pdf/Diggaj_Raj(CV).pdf"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="px-4 sm:px-6 py-2.5 sm:py-3 bg-white text-black rounded-full text-sm sm:text-base font-medium hover:bg-gray-100 transition-colors flex items-center gap-2"
