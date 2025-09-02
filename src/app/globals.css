@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	color-scheme: dark;
+}
+
+body {
+	@apply bg-black text-gray-100;
+	overflow-x: hidden;
+}
+
+.gradient-text {
+	@apply bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500;
+}
+
+.nav-link {
+	@apply relative px-3 py-2 text-sm text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/[0.05];
+}
+
+.canvas-container {
+	@apply fixed top-0 left-0 w-full h-full -z-10;
+	background: radial-gradient(circle at 50% 0%,
+			rgba(0, 0, 0, 0) 6%,
+			rgba(0, 0, 0, 0.8) 45%);
+}
+
+.gradient-grid {
+	background-image:
+		linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+		linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+	background-size: 60px 60px;
+	mask-image: radial-gradient(circle at 50% 0%, white 20%, transparent 70%);
+}
+
+.spotlight {
+	pointer-events: none;
+	position: fixed;
+	inset: 0;
+	z-index: 0;
+	--size: 600px;
+	--spotlight: radial-gradient(var(--size) var(--size) at center,
+			rgba(0, 0, 0, 0),
+			rgba(0, 0, 0, 1) 100%);
+	mask-image: var(--spotlight);
+	-webkit-mask-image: var(--spotlight);
+	background: radial-gradient(300px 300px at center,
+			rgba(255, 255, 255, 0.05),
+			transparent 100%);
+}
+
+/* Custom cursor for copy button */
+.cursor-copy {
+	cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'></path><rect x='8' y='2' width='8' height='4' rx='1' ry='1'></rect></svg>") 12 12, pointer;
+}
+
+/* Calendar Styling */
+.react-calendar {
+	width: 100%;
+	background: transparent;
+	border: none;
+	font-family: inherit;
+	line-height: 1.125em;
+	color: black;
+}
+
+.react-calendar--doubleView {
+	width: 700px;
+}
+
+.react-calendar--doubleView .react-calendar__viewContainer {
+	display: flex;
+	margin: -0.5em;
+}
+
+.react-calendar--doubleView .react-calendar__viewContainer > * {
+	width: 50%;
+	margin: 0.5em;
+}
+
+.react-calendar,
+.react-calendar *,
+.react-calendar *:before,
+.react-calendar *:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.react-calendar button {
+	margin: 0;
+	border: 0;
+	outline: none;
+	color: black;
+	font-weight: 500;
+}
+
+.react-calendar button:enabled:hover {
+	cursor: pointer;
+}
+
+/* Navigation styling */
+.react-calendar__navigation {
+	display: flex;
+	height: 44px;
+	margin-bottom: 1em;
+}
+
+.react-calendar__navigation button {
+	min-width: 44px;
+	background: none;
+	border-radius: 0.5rem;
+	transition: all 0.2s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.react-calendar__navigation button:disabled {
+	opacity: 0.5;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+	background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Month view styling */
+.react-calendar__month-view__weekdays {
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 0.75em;
+	margin-bottom: 0.75rem;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+	padding: 0.5em;
+	color: rgba(0, 0, 0, 0.8);
+	font-weight: 600;
+}
+
+.react-calendar__month-view__weekdays__weekday abbr {
+	text-decoration: none;
+	border-bottom: none;
+}
+
+.react-calendar__month-view__weekNumbers .react-calendar__tile {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.75em;
+	font-weight: bold;
+}
+
+.react-calendar__month-view__days__day {
+	padding: 0.5em;
+	border-radius: 8px;
+}
+
+.react-calendar__month-view__days__day--weekend {
+	color: rgba(0, 0, 0, 0.7);
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+	color: rgba(0, 0, 0, 0.4);
+}
+
+/* Year and decade view styling */
+.react-calendar__year-view .react-calendar__tile,
+.react-calendar__decade-view .react-calendar__tile,
+.react-calendar__century-view .react-calendar__tile {
+	padding: 1.5em 0.5em;
+	border-radius: 0.5rem;
+	transition: all 0.2s ease;
+}
+
+.react-calendar__tile {
+	max-width: 100%;
+	padding: 10px 6.6667px;
+	background: none;
+	text-align: center;
+	line-height: 16px;
+	font-size: 14px;
+	border-radius: 8px;
+	transition: all 0.2s ease;
+	position: relative;
+	z-index: 1;
+}
+
+.react-calendar__tile:disabled {
+	color: rgba(0, 0, 0, 0.4);
+	background-color: transparent;
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+	background-color: rgba(255, 255, 255, 0.15);
+}
+
+.react-calendar__tile--now {
+	background: rgba(59, 130, 246, 0.25);
+	color: black;
+	font-weight: 600;
+}
+
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+	background: rgba(59, 130, 246, 0.35);
+}
+
+.react-calendar__tile--active {
+	background: white;
+	color: black;
+	font-weight: 600;
+	box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+	background: rgba(255, 255, 255, 0.9);
+}
+
+/* Custom calendar styles */
+.custom-calendar .react-calendar__navigation {
+	display: none; /* Hide default navigation since we're using custom navigation */
+}
+
+/* Year and decade view improvements */
+.react-calendar__year-view__months__month,
+.react-calendar__decade-view__years__year,
+.react-calendar__century-view__decades__decade {
+	padding: 1rem 0.5rem !important;
+	margin: 0.25rem !important;
+	border-radius: 0.5rem !important;
+}
+
+.react-calendar__year-view__months__month:hover,
+.react-calendar__decade-view__years__year:hover,
+.react-calendar__century-view__decades__decade:hover {
+	background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.react-calendar__year-view__months__month--active,
+.react-calendar__decade-view__years__year--active,
+.react-calendar__century-view__decades__decade--active {
+	background: rgba(59, 130, 246, 0.5) !important;
+	color: black !important;
+	font-weight: 600 !important;
+}
